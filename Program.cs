@@ -2,25 +2,25 @@
 
 string[] GetShortStrings(string[] strings)
 {
-    int shortStringsCount = 0;
+    int ShortStringsCount = 0;
     for (int i = 0; i < strings.Length; i++)
     {
         if (strings[i].Length <= 3)
         {
-            shortStringsCount++;
+            ShortStringsCount++;
         }
     }
-    string[] shortStrings = new string[shortStringsCount];
+    string[] ShortStrings = new string[ShortStringsCount];
     int j = 0;
     for (int i = 0; i < strings.Length; i++)
     {
         if (strings[i].Length <= 3)
         {
-            shortStrings[j] = strings[i];
+            ShortStrings[j] = strings[i];
             j++;
         }
     }
-    return shortStrings;
+    return ShortStrings;
 }
 
 string[] newArray = GetShortStrings(array);
