@@ -1,4 +1,4 @@
-﻿string [] array = {"jome", "kome", "lon", "nani", "op"};
+﻿string [] array = {"home", "cat", "refrigerator", "dog", "me"};
 
 string[] GetShortStrings(string[] strings)
 {
@@ -22,3 +22,15 @@ string[] GetShortStrings(string[] strings)
     }
     return shortStrings;
 }
+
+string[] newArray = GetShortStrings(array);
+
+void PrintStringMatrix(string[] matrix)
+{
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+        System.Console.WriteLine(matrix[i] + " ");
+    }
+}
+
+PrintStringMatrix(newArray);
