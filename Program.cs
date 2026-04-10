@@ -1,36 +1,42 @@
-﻿string [] array = {"home", "cat", "refrigerator", "dog", "me"};
+﻿string[] array = { "home", "cat", "refrigerator", "dog", "me" };
 
 string[] GetShortStrings(string[] strings)
 {
-    int ShortStringsCount = 0;
-    for (int i = 0; i < strings.Length; i++)
+    // Подсчёт количества строк длиной 3 символа или меньше
+    int shortStringsCount = 0;
+    foreach (string str in strings)
     {
-        if (strings[i].Length <= 3)
+        if (str.Length <= 3)
         {
-            ShortStringsCount++;
+            shortStringsCount++;
         }
     }
-    string[] ShortStrings = new string[ShortStringsCount];
-    int j = 0;
-    for (int i = 0; i < strings.Length; i++)
+
+    // Создание результирующего массива
+    string[] shortStrings = new string[shortStringsCount];
+    
+    // Заполнение результирующего массива
+    int index = 0;
+    foreach (string str in strings)
     {
-        if (strings[i].Length <= 3)
+        if (str.Length <= 3)
         {
-            ShortStrings[j] = strings[i];
-            j++;
+            shortStrings[index] = str;
+            index++;
         }
     }
-    return ShortStrings;
+
+    return shortStrings;
 }
 
 string[] newArray = GetShortStrings(array);
 
-void PrintStringMatrix(string[] matrix)
+void PrintStringArray(string[] strings)
 {
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    foreach (string str in strings)
     {
-        System.Console.WriteLine(matrix[i] + " ");
+        Console.WriteLine(str);
     }
 }
 
-PrintStringMatrix(newArray);
+PrintStringArray(newArray);
